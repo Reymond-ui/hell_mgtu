@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Твой результат</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="cyberpunk-theme">
+    <div class="result-container">
+        <h1 class="result-title glitch">Твой студенческий архетип</h1>
+        
+        <div class="main-result-card neon-border">
+            <h2 class="type-title"></h2>
+            <div class="type-emoji"></div>
+            <div class="type-code"></div>
+        </div>
+        
+        <div class="aspects-container">
+            <div class="aspect-card neon-border">
+                <h3 class="aspect-title"></h3>
+                <div class="aspect-emoji"></div>
+                <p class="aspect-desc"></p>
+            </div>
+            <div class="aspect-card neon-border">
+                <h3 class="aspect-title"></h3>
+                <div class="aspect-emoji"></div>
+                <p class="aspect-desc"></p>
+            </div>
+            <div class="aspect-card neon-border">
+                <h3 class="aspect-title"></h3>
+                <div class="aspect-emoji"></div>
+                <p class="aspect-desc"></p>
+            </div>
+        </div>
+        
+        <div class="charts-container">
+            <canvas id="chart1"></canvas>
+            <canvas id="chart2"></canvas>
+            <canvas id="chart3"></canvas>
+        </div>
+        
+        <div class="full-description neon-border">
+            <h3>Полное описание:</h3>
+            <p class="type-description"></p>
+        </div>
+        
+        <div class="share-buttons">
+            <button class="share-btn neon-button blue" id="copyBtn">Копировать результат</button>
+            <button class="share-btn neon-button pink" id="restartBtn">Пройти тест снова</button>
+        </div>
+    </div>
+    
+    <script src="results.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const result = new ResultDisplay();
+        });
+        
+        document.getElementById('restartBtn').addEventListener('click', () => {
+            window.location.href = 'test.html';
+        });
+    </script>
+</body>
+</html>

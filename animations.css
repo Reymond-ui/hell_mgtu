@@ -1,0 +1,87 @@
+.glitch {
+    position: relative;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #FF00FF;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00FFFF;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip: rect(32px, 9999px, 76px, 0); }
+    20% { clip: rect(54px, 9999px, 99px, 0); }
+    40% { clip: rect(12px, 9999px, 65px, 0); }
+    60% { clip: rect(88px, 9999px, 120px, 0); }
+    80% { clip: rect(3px, 9999px, 60px, 0); }
+    100% { clip: rect(70px, 9999px, 110px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(65px, 9999px, 119px, 0); }
+    20% { clip: rect(25px, 9999px, 145px, 0); }
+    40% { clip: rect(95px, 9999px, 50px, 0); }
+    60% { clip: rect(5px, 9999px, 75px, 0); }
+    80% { clip: rect(110px, 9999px, 130px, 0); }
+    100% { clip: rect(10px, 9999px, 90px, 0); }
+}
+
+.neon-button:hover {
+    animation: neon-pulse 0.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+    }
+    to {
+        box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+}
+
+.neon-border {
+    animation: border-flicker 2s infinite alternate;
+}
+
+@keyframes border-flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        box-shadow: 0 0 10px #00FFFF, 0 0 20px #FF00FF;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        box-shadow: 0 0 5px #00FFFF, 0 0 10px #FF00FF;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pixel-corners {
+    clip-path: polygon(
+        0% 5px, 5px 5px, 5px 0%, calc(100% - 5px) 0%, calc(100% - 5px) 5px, 100% 5px, 
+        100% calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 5px calc(100% - 5px), 0% calc(100% - 5px)
+    );
+}

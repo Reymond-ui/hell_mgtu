@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест личности</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body class="cyberpunk-theme">
+    <div class="test-container">
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <div class="progress-text">Вопрос 1/19</div>
+        </div>
+        
+        <div class="question-container">
+            <h2 class="question-text"></h2>
+            <div class="answers-container"></div>
+        </div>
+        
+        <div class="navigation-buttons">
+            <button class="nav-button prev neon-button blue" disabled>← Назад</button>
+            <button class="nav-button next neon-button pink">Далее →</button>
+        </div>
+    </div>
+    
+    <script src="test.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const test = new PersonalityTest();
+        });
+    </script>
+</body>
+</html>
